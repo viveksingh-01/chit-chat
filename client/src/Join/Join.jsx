@@ -31,6 +31,7 @@ const Join = () => {
           <Link
             onClick={(evt) => (!name || !room ? evt.preventDefault() : null)}
             to={`/chat?name=${name}&room=${room}`}
+            style={{ textDecoration: 'none' }}
           >
             <input
               type="submit"
