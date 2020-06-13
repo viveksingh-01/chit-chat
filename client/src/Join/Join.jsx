@@ -1,33 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Join = () => (
-  <div>
-    <div className="mx-auto" style={{ width: '30%' }}>
-      <div className="my-4">
-        <h3>Join the chat-room!</h3>
+const Join = () => {
+  const [name, setName] = useState('');
+  const [room, setRoom] = useState('');
+
+  return (
+    <div>
+      <div className="mx-auto" style={{ width: '30%' }}>
+        <div className="my-4">
+          <h3>Join the chat-room!</h3>
+        </div>
+        <form action="">
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control"
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Enter Name"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control"
+              onChange={(e) => setRoom(e.target.value)}
+              placeholder="Enter Room"
+            />
+          </div>
+          <Link
+            onClick={(evt) => (!name || !room ? evt.preventDefault() : null)}
+            to={`/chat?name=${name}&room=${room}`}
+          >
+            <input
+              type="submit"
+              className="btn btn-primary btn-block"
+              value="Join"
+            />
+          </Link>
+        </form>
       </div>
-      <div className="form-group">
-        <input
-          type="text"
-          className="form-control"
-          name="name"
-          placeholder="Enter name"
-        />
-      </div>
-      <div className="form-group">
-        <input
-          type="text"
-          className="form-control"
-          name="room"
-          placeholder="Enter room"
-        />
-      </div>
-      <Link to="/chat">
-        <button className="btn btn-primary btn-block">Join</button>
-      </Link>
     </div>
-  </div>
-);
+  );
+};
 
 export default Join;
