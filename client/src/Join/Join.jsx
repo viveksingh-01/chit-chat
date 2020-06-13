@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Join = () => (
   <div>
@@ -19,7 +20,9 @@ const Join = () => (
           placeholder="Enter room"
         />
       </div>
-      <button className="btn btn-primary btn-block">Join</button>
+      <Link to="/chat">
+        <button className="btn btn-primary btn-block">Join</button>
+      </Link>
     </div>
   </div>
 );
