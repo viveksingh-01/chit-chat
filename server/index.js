@@ -1,12 +1,17 @@
-const express = require('express');
+const app = require('express')();
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
 
-const PORT = process.env.PORT || 5000;
 const router = require('./router');
 
-const app = express();
+const PORT = process.env.PORT || 5000;
+
+io.on('connection', (socket) => {
+  console.log('New Connection!');
+});
 
 app.use(router);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server started at ${PORT}`);
 });
