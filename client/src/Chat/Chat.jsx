@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import queryString from 'query-string';
+import io from 'socket.io-client';
+
+const ENDPOINT = 'localhost:5000';
 
 const Chat = ({ location }) => {
   const [name, setName] = useState('');
@@ -8,7 +11,10 @@ const Chat = ({ location }) => {
     const { name, room } = queryString.parse(location.search);
     setName(name);
     setRoom(room);
-  });
+
+    const socket = io.connect(ENDPOINT);
+    console.log(socket);
+  }, [ENDPOINT, location.search]);
 
   return null;
 };
