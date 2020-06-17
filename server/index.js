@@ -8,6 +8,14 @@ const PORT = process.env.PORT || 5000;
 
 io.on('connection', (socket) => {
   console.log('New Connection!');
+
+  socket.on('join', ({ name, room }) => {
+    console.log(name, room);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('User has left.');
+  });
 });
 
 app.use(router);
