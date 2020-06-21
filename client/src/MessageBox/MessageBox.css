@@ -1,0 +1,6 @@
+.container-message-box {
+  width: 100%;
+  height: calc(100vh - 300px);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
