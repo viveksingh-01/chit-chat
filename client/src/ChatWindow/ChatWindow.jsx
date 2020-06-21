@@ -3,10 +3,10 @@ import './ChatWindow.css';
 import MessageBox from '../MessageBox/MessageBox';
 import MessageInput from '../MessageInput/MessageInput';
 
-const ChatWindow = () => {
+const ChatWindow = ({ name, room }) => {
   return (
     <div className="container-chat-window">
-      CHAT-ROOM NAME
+      <h5>{room}</h5>
       <MessageBox />
       <MessageInput />
     </div>

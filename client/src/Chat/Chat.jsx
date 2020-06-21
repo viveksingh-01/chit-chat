@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import queryString from 'query-string';
 import io from 'socket.io-client';
+import ChatWindow from '../ChatWindow/ChatWindow';
 
 const ENDPOINT = 'localhost:5000';
 
@@ -22,7 +23,11 @@ const Chat = ({ location }) => {
     };
   }, [ENDPOINT, location.search]);
 
-  return null;
+  return (
+    <main className="d-flex flex-no-wrap">
+      <ChatWindow name={name} room={room} />
+    </main>
+  );
 };
 
 export default Chat;
