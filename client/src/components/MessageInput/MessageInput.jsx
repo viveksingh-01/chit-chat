@@ -2,7 +2,7 @@ import React from 'react';
 
 const MessageInput = () => {
   return (
-    <div className="d-flex align-items-center mt-3">
+    <div className="d-flex align-items-center my-3">
       <input
         type="text"
         className="form-control mr-3"
