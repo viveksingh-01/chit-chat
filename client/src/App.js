@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './App.css';
 
 import Join from './components/Join/Join';
 import Chat from './components/Chat/Chat';
@@ -11,7 +12,7 @@ class App extends React.Component {
     return (
       <Router>
         <Navbar />
-        <div className="container my-5">
+        <div className="container mt-4">
           <Route path="/" exact={true} component={Join} />
           <Route path="/chat" component={Chat} />
         </div>
