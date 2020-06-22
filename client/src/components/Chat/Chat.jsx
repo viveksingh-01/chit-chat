@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import queryString from 'query-string';
 import io from 'socket.io-client';
+import './Chat.css';
 import ChatWindow from '../ChatWindow/ChatWindow';
+import UserList from '../UserList/UserList';
 
 const ENDPOINT = 'localhost:5000';
 
@@ -24,8 +26,9 @@ const Chat = ({ location }) => {
   }, [ENDPOINT, location.search]);
 
   return (
-    <main className="d-flex flex-no-wrap">
+    <main className="d-flex flex-no-wrap container-chat">
       <ChatWindow name={name} room={room} />
+      <UserList />
     </main>
   );
 };
