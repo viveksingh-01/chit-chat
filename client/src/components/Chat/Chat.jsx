@@ -43,7 +43,7 @@ const Chat = ({ location }) => {
   };
 
   return (
-    <main className="d-flex flex-no-wrap container-chat">
+    <main className="container-chat">
       <ChatWindow
         name={name}
         room={room}
