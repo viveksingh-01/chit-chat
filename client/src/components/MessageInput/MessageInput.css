@@ -7,6 +7,12 @@
 
 .btn-send {
   border-radius: 0 !important;
-  width: 105px;
+  min-width: 105px;
   height: 45px;
+}
+
+@media (max-width: 768px) {
+  .btn-send {
+    min-width: 65px;
+  }
 }
