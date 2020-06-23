@@ -5,7 +5,9 @@ const MessageBox = ({ messages }) => {
   return (
     <div className="container-message-box">
       {messages.map(({ message }, index) => (
-        <p key={index}>{message}</p>
+        <span className="message" key={index}>
+          {message}
+        </span>
       ))}
     </div>
   );
