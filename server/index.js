@@ -9,8 +9,6 @@ const router = require('./router');
 const PORT = process.env.PORT || 5000;
 
 io.on('connection', (socket) => {
-  console.log('New Connection!');
-
   socket.on('join', ({ name, room }, callback) => {
     const { user, error } = addUser({ id: socket.id, name, room });
     if (error) {
@@ -26,6 +24,11 @@ io.on('connection', (socket) => {
     socket.broadcast
       .to(user.room)
       .emit('message', { user: 'Admin', message: `${user.name} has joined!` });
+
+    io.to(user.room).emit('room-data', {
+      room: user.room,
+      users: getUsersInRoom(user.room)
+    });
   });
 
   socket.on('send-message', (message) => {
@@ -39,6 +42,10 @@ io.on('connection', (socket) => {
       io.to(user.room).emit('message', {
         user: 'Admin',
         message: `${user.name} has left the room.`
+      });
+      io.to(user.room).emit('room-data', {
+        room: user.room,
+        users: getUsersInRoom(user.room)
       });
     }
   });
