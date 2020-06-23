@@ -6,15 +6,18 @@ import './App.css';
 import Join from './components/Join/Join';
 import Chat from './components/Chat/Chat';
 import Navbar from './components/Navbar/Navbar';
+import { MessagesProvider } from './_contexts/MessagesContext';
 
 class App extends React.Component {
   render() {
     return (
       <Router>
         <Navbar />
-        <div className="container mt-4">
+        <div className="container">
           <Route path="/" exact={true} component={Join} />
-          <Route path="/chat" component={Chat} />
+          <MessagesProvider>
+            <Route path="/chat" component={Chat} />
+          </MessagesProvider>
         </div>
       </Router>
     );
