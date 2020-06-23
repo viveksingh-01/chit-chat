@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './MessageBox.css';
+import { MessagesContext } from '../../_contexts/MessagesContext';
 
-const MessageBox = ({ messages }) => {
+const MessageBox = () => {
+  const messages = useContext(MessagesContext)[0];
   return (
     <div className="container-message-box">
       {messages.map(({ message }, index) => (
-        <span className="message" key={index}>
+        <p className="message" key={index}>
           {message}
-        </span>
+        </p>
       ))}
     </div>
   );
