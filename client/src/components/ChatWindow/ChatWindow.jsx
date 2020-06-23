@@ -7,7 +7,7 @@ const ChatWindow = ({ name, room, sendMessage }) => {
   return (
     <div className="p-3 p-md-5 container-chat-window">
       <h5>{room}</h5>
-      <MessageBox />
+      <MessageBox name={name} />
       <MessageInput sendMessage={sendMessage} />
     </div>
   );
