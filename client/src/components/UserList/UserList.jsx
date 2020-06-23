@@ -1,14 +1,11 @@
 import React from 'react';
 import './UserList.css';
 
-const UserList = () => {
-  const users = ['mike', 'chester', 'brad', 'rob'];
+const UserList = ({ users }) => {
   return (
     <div className="container-user-list">
       <h6>IN ROOM</h6>
-      {users.map((user) => (
-        <li>{user}</li>
-      ))}
+      {users ? users.map(({ name, id }) => <li key={id}>{name}</li>) : null}
     </div>
   );
 };

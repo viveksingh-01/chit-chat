@@ -7,7 +7,7 @@ const Join = () => {
 
   return (
     <div>
-      <div className="mx-auto" style={{ width: '30%' }}>
+      <div className="mx-auto p-4" style={{ width: '45%', maxWidth: '380px' }}>
         <div className="my-4">
           <h3>Join the chat-room!</h3>
         </div>
