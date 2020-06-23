@@ -9,6 +9,7 @@ const MessageInput = ({ sendMessage }) => {
   const onSubmit = (evt) => {
     evt.preventDefault();
     sendMessage(message);
+    setMessage('');
   };
 
   return (
@@ -18,6 +19,7 @@ const MessageInput = ({ sendMessage }) => {
           type="text"
           className="form-control input-message"
           placeholder="Enter message"
+          value={message}
           onChange={(evt) => setMessage(evt.target.value)}
         />
         <button
