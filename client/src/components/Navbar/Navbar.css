@@ -1,6 +1,7 @@
 .navbar {
   background-color: #333 !important;
   box-shadow: 0px 4px 6px -4px #333;
+  height: 52px !important;
 }
 
 .navbar-brand {
