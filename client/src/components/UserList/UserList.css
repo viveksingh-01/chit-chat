@@ -2,3 +2,10 @@
   min-width: 120px;
   margin: 80px 24px;
 }
+
+@media (max-width: 991px) {
+  .container-user-list {
+    min-width: 120px;
+    margin: 48px 12px;
+  }
+}

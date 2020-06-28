@@ -13,7 +13,7 @@ class App extends React.Component {
     return (
       <Router>
         <Navbar />
-        <div className="container">
+        <div className="container-fluid">
           <Route path="/" exact={true} component={Join} />
           <MessagesProvider>
             <Route path="/chat" component={Chat} />

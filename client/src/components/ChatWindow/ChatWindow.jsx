@@ -5,8 +5,8 @@ import MessageInput from '../MessageInput/MessageInput';
 
 const ChatWindow = ({ name, room, sendMessage }) => {
   return (
-    <div className="p-3 p-md-5 container-chat-window">
-      <h5>{room}</h5>
+    <div className="m-3 m-lg-5 container-chat-window">
+      <h5 className="text-uppercase">{room}</h5>
       <MessageBox name={name} />
       <MessageInput sendMessage={sendMessage} />
     </div>

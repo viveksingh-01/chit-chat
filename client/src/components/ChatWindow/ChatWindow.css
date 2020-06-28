@@ -1,3 +1,9 @@
 .container-chat-window {
   width: 65%;
 }
+
+@media (max-width: 768px) {
+  .container-chat-window {
+    width: 100%;
+  }
+}
